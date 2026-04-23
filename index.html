@@ -34,8 +34,23 @@
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;}
 
 .sidebar{width:260px;background:var(--gradient);color:#fff;display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;z-index:100;transition:transform .3s;}
-.sidebar-brand{padding:20px 18px 16px;border-bottom:1px solid rgba(255,255,255,.15);display:flex;align-items:center;gap:12px;}
-.sidebar-brand img.logo{height:36px;max-width:180px;object-fit:contain;filter:brightness(0) invert(1);opacity:.95;}
+.sidebar-brand {
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 変更: .sidebar-brand img.logo */
+.sidebar-brand img.logo {
+  height: auto;
+  max-height: 44px;
+  max-width: 200px;
+  object-fit: contain;
+  background: rgba(255,255,255,0.95);
+  padding: 8px 16px;
+  border-radius: 8px;
 .sidebar-brand .logo-text{display:flex;flex-direction:column;}
 .sidebar-brand .logo-text h1{font-size:20px;font-weight:800;letter-spacing:2px;}
 .sidebar-brand .logo-text span{font-size:10px;opacity:.65;display:block;margin-top:2px;letter-spacing:.5px;}
@@ -211,13 +226,13 @@ textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New'
 
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
-    <img src="logo.png" alt="Caucasus" class="logo" id="sidebar-logo-img"
-         onerror="this.style.display='none';document.getElementById('sidebar-logo-fallback').style.display='flex';">
-    <div id="sidebar-logo-fallback" class="logo-text" style="display:none;">
-      <h1>CAUCASUS</h1>
-      <span>Certificate Management Platform</span>
-    </div>
+  <img src="logo.png" alt="Caucasus" class="logo" id="sidebar-logo-img"
+       onerror="this.style.display='none';document.getElementById('sidebar-logo-fallback').style.display='flex';">
+  <div id="sidebar-logo-fallback" style="display:none;flex-direction:column;align-items:flex-start;">
+    <span style="font-size:20px;font-weight:800;letter-spacing:2px;">CAUCASUS</span>
+    <span style="font-size:10px;opacity:.65;">Certificate Management Platform</span>
   </div>
+</div>
   <nav class="sidebar-nav">
     <a class="active" data-page="dashboard" onclick="navigate('dashboard')"><span class="nav-icon">📊</span> ダッシュボード</a>
     <a data-page="license" onclick="navigate('license')"><span class="nav-icon">🛒</span> ライセンス購入・管理</a>
