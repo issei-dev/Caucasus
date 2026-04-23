@@ -33,13 +33,12 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;}
 
-/* ===== SIDEBAR ===== */
 .sidebar{width:260px;background:var(--gradient);color:#fff;display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;z-index:100;transition:transform .3s;}
-.sidebar-brand{padding:28px 24px 20px;border-bottom:1px solid rgba(255,255,255,.15);display:flex;align-items:center;gap:14px;}
-.sidebar-brand img.logo{width:38px;height:38px;border-radius:8px;object-fit:contain;background:rgba(255,255,255,.15);padding:4px;}
-.sidebar-brand .logo-placeholder{width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;letter-spacing:-1px;}
-.sidebar-brand-text h1{font-size:20px;font-weight:800;letter-spacing:2px;}
-.sidebar-brand-text span{font-size:10px;opacity:.65;display:block;margin-top:2px;letter-spacing:.5px;}
+.sidebar-brand{padding:20px 18px 16px;border-bottom:1px solid rgba(255,255,255,.15);display:flex;align-items:center;gap:12px;}
+.sidebar-brand img.logo{height:36px;max-width:180px;object-fit:contain;filter:brightness(0) invert(1);opacity:.95;}
+.sidebar-brand .logo-text{display:flex;flex-direction:column;}
+.sidebar-brand .logo-text h1{font-size:20px;font-weight:800;letter-spacing:2px;}
+.sidebar-brand .logo-text span{font-size:10px;opacity:.65;display:block;margin-top:2px;letter-spacing:.5px;}
 .sidebar-nav{flex:1;padding:16px 12px;display:flex;flex-direction:column;gap:2px;overflow-y:auto;}
 .sidebar-nav a{display:flex;align-items:center;gap:12px;padding:11px 16px;color:rgba(255,255,255,.78);text-decoration:none;border-radius:var(--radius-sm);font-size:13.5px;font-weight:500;transition:all .2s;cursor:pointer;position:relative;}
 .sidebar-nav a:hover,.sidebar-nav a.active{background:rgba(255,255,255,.18);color:#fff;}
@@ -48,7 +47,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hir
 .sidebar-nav a .coming-soon{position:absolute;right:10px;background:rgba(255,255,255,.2);padding:2px 7px;border-radius:10px;font-size:9px;font-weight:700;letter-spacing:.3px;}
 .sidebar-footer{padding:14px 20px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;opacity:.55;text-align:center;}
 
-/* ===== MAIN ===== */
 .main{margin-left:260px;flex:1;min-height:100vh;}
 .topbar{background:var(--white);border-bottom:1px solid var(--border);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(255,255,255,.92);}
 .topbar h2{font-size:17px;font-weight:700;color:var(--primary);}
@@ -60,11 +58,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hir
 .topbar-user{width:34px;height:34px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px;}
 .content{padding:28px 32px 48px;}
 
-/* ===== CARDS ===== */
 .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;border:1px solid var(--border);}
 .card-title{font-size:13px;font-weight:700;color:var(--text-light);margin-bottom:16px;text-transform:uppercase;letter-spacing:.6px;}
 
-/* ===== STAT CARDS ===== */
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:18px;margin-bottom:24px;}
 .stat-card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);border:1px solid var(--border);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;}
 .stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
@@ -78,7 +74,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hir
 .stat-card .stat-value{font-size:30px;font-weight:800;margin:6px 0 2px;color:var(--text);}
 .stat-card .stat-sub{font-size:11px;color:var(--text-light);}
 
-/* ===== CHARTS ===== */
 .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:24px;}
 .bar-chart{display:flex;align-items:flex-end;gap:10px;height:180px;padding-top:20px;}
 .bar-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;}
@@ -89,7 +84,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hir
 .legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-light);}
 .legend-dot{width:10px;height:10px;border-radius:50%;}
 
-/* ===== TABLE ===== */
 .table-wrap{overflow-x:auto;}
 table{width:100%;border-collapse:collapse;}
 thead th{text-align:left;padding:11px 14px;font-size:11px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--border);white-space:nowrap;}
@@ -104,7 +98,6 @@ tbody tr:hover{background:#F8FAFC;}
 .badge-gray{background:#F1F5F9;color:#475569;}
 .badge-purple{background:#EDE9FE;color:#5B21B6;}
 
-/* ===== BUTTONS ===== */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;border:none;cursor:pointer;transition:all .2s;text-decoration:none;font-family:inherit;}
 .btn-primary{background:var(--gradient);color:#fff;}
 .btn-primary:hover{box-shadow:var(--shadow-lg);transform:translateY(-1px);}
@@ -119,7 +112,6 @@ tbody tr:hover{background:#F8FAFC;}
 .btn-lg{padding:14px 28px;font-size:15px;}
 .btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important;}
 
-/* ===== FORMS ===== */
 .form-group{margin-bottom:18px;}
 .form-group label{display:block;font-size:12px;font-weight:700;color:var(--text);margin-bottom:5px;}
 .form-group .hint{font-size:10px;color:var(--text-light);margin-top:3px;}
@@ -130,14 +122,7 @@ tbody tr:hover{background:#F8FAFC;}
 select.form-control{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748B' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;}
 textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New',monospace;font-size:12px;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-
-/* ===== RADIO / CARD SELECT ===== */
-.radio-group{display:flex;gap:10px;flex-wrap:wrap;}
-.radio-card{flex:1;min-width:140px;padding:14px;border:2px solid var(--border);border-radius:var(--radius-sm);cursor:pointer;transition:all .2s;text-align:center;}
-.radio-card:hover{border-color:var(--primary-light);}
-.radio-card.selected{border-color:var(--primary);background:#EFF6FF;box-shadow:0 0 0 3px rgba(0,85,222,.08);}
-.radio-card .rc-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px;}
-.radio-card .rc-desc{font-size:10px;color:var(--text-light);}
+.form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
 
 .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:20px;}
 .pricing-card{border:2px solid var(--border);border-radius:var(--radius);padding:24px 20px;text-align:center;transition:all .2s;cursor:pointer;position:relative;}
@@ -149,7 +134,6 @@ textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New'
 .pricing-card .pc-price{font-size:26px;font-weight:800;color:var(--primary);}
 .pricing-card .pc-price span{font-size:12px;font-weight:500;color:var(--text-light);}
 
-/* ===== TOGGLE ===== */
 .toggle-switch{position:relative;width:46px;height:24px;display:inline-block;}
 .toggle-switch input{opacity:0;width:0;height:0;}
 .toggle-slider{position:absolute;inset:0;background:#CBD5E1;border-radius:24px;cursor:pointer;transition:.3s;}
@@ -157,7 +141,6 @@ textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New'
 .toggle-switch input:checked+.toggle-slider{background:var(--primary);}
 .toggle-switch input:checked+.toggle-slider::before{transform:translateX(22px);}
 
-/* ===== ALERT ===== */
 .alert{padding:16px 20px;border-radius:var(--radius-sm);font-size:13px;font-weight:500;display:flex;align-items:flex-start;gap:12px;margin-bottom:18px;}
 .alert-danger{background:var(--danger-bg);color:var(--danger);border:2px solid #FECACA;}
 .alert-warning{background:#FFFBEB;color:#B45309;border:2px solid #FDE68A;}
@@ -165,22 +148,19 @@ textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New'
 .alert-info{background:#EFF6FF;color:#1E40AF;border:2px solid #BFDBFE;}
 .alert-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
 
-/* ===== LOADING ===== */
 .loading-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:9999;backdrop-filter:blur(2px);}
-.loading-box{background:var(--white);border-radius:var(--radius);padding:48px 64px;text-align:center;box-shadow:var(--shadow-xl);max-width:400px;}
+.loading-box{background:var(--white);border-radius:var(--radius);padding:48px 64px;text-align:center;box-shadow:var(--shadow-xl);max-width:420px;}
 .spinner{width:44px;height:44px;border:4px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 16px;}
 @keyframes spin{to{transform:rotate(360deg);}}
 .loading-box p{font-size:13px;color:var(--text-light);font-weight:500;line-height:1.6;}
 .success-icon{width:60px;height:60px;border-radius:50%;background:var(--success);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:26px;color:#fff;animation:popIn .4s ease;}
 @keyframes popIn{0%{transform:scale(0);}70%{transform:scale(1.15);}100%{transform:scale(1);}}
 
-/* ===== CONFIG ROW ===== */
 .config-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border);gap:16px;}
 .config-row:last-child{border-bottom:none;}
 .config-label{font-size:13px;font-weight:600;color:var(--text);}
 .config-desc{font-size:11px;color:var(--text-light);margin-top:2px;}
 
-/* ===== LICENSE SUMMARY ===== */
 .license-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:22px;}
 .license-item{background:linear-gradient(135deg,#EFF6FF 0%,#F8FAFC 100%);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;transition:transform .2s;}
 .license-item:hover{transform:translateY(-1px);}
@@ -188,7 +168,11 @@ textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New'
 .license-item .li-count{font-size:28px;font-weight:800;color:var(--text);}
 .license-item .li-label{font-size:10px;color:var(--text-light);}
 
-/* ===== COMING SOON OVERLAY ===== */
+.price-summary{background:linear-gradient(135deg,#EFF6FF,#F8FAFC);border:2px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin:20px 0;display:flex;align-items:center;justify-content:space-between;}
+.price-summary .ps-label{font-size:14px;font-weight:600;color:var(--text);}
+.price-summary .ps-amount{font-size:28px;font-weight:800;color:var(--primary);}
+.price-summary .ps-detail{font-size:11px;color:var(--text-light);margin-top:2px;}
+
 .coming-soon-page{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:400px;text-align:center;}
 .coming-soon-page .cs-icon{font-size:64px;margin-bottom:20px;animation:float 3s ease-in-out infinite;}
 @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
@@ -196,82 +180,58 @@ textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New'
 .coming-soon-page p{font-size:14px;color:var(--text-light);max-width:420px;line-height:1.6;}
 .coming-soon-badge{display:inline-block;background:var(--gradient);color:#fff;padding:6px 18px;border-radius:20px;font-size:12px;font-weight:700;margin-top:16px;letter-spacing:.5px;}
 
-/* ===== SECTION ===== */
 .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
 .section-header h3{font-size:15px;font-weight:700;}
 
-/* ===== PAGE ===== */
 .page{display:none;}
 .page.active{display:block;animation:fadeIn .3s ease;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
 
-/* ===== RESPONSIVE ===== */
 .hamburger{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--primary);}
 @media(max-width:768px){
   .sidebar{transform:translateX(-100%);}
   .sidebar.open{transform:translateX(0);}
   .main{margin-left:0;}
   .hamburger{display:block;}
-  .charts-grid,.form-row{grid-template-columns:1fr;}
+  .charts-grid,.form-row,.form-row-3{grid-template-columns:1fr;}
   .stats-grid{grid-template-columns:1fr 1fr;}
   .content{padding:18px;}
   .topbar{padding:12px 18px;}
 }
-
-/* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar{width:6px;}
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:#CBD5E1;border-radius:3px;}
 ::-webkit-scrollbar-thumb:hover{background:#94A3B8;}
+
+.option-price-info{margin-top:8px;padding:10px 14px;background:#F8FAFC;border-radius:var(--radius-sm);font-size:12px;color:var(--text-light);border:1px solid var(--border);display:none;}
+.san-count-wrap{margin-top:10px;display:none;}
 </style>
 </head>
 <body>
 
-<!-- ===== SIDEBAR ===== -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
-    <div class="logo-placeholder" id="sidebar-logo">C</div>
-    <div class="sidebar-brand-text">
+    <img src="logo.png" alt="Caucasus" class="logo" id="sidebar-logo-img"
+         onerror="this.style.display='none';document.getElementById('sidebar-logo-fallback').style.display='flex';">
+    <div id="sidebar-logo-fallback" class="logo-text" style="display:none;">
       <h1>CAUCASUS</h1>
       <span>Certificate Management Platform</span>
     </div>
   </div>
   <nav class="sidebar-nav">
-    <a class="active" data-page="dashboard" onclick="navigate('dashboard')">
-      <span class="nav-icon">📊</span> ダッシュボード
-    </a>
-    <a data-page="license" onclick="navigate('license')">
-      <span class="nav-icon">🛒</span> ライセンス購入・管理
-    </a>
-    <a data-page="issue" onclick="navigate('issue')">
-      <span class="nav-icon">📝</span> 証明書発行
-    </a>
-    <a data-page="manage" onclick="navigate('manage')">
-      <span class="nav-icon">🔐</span> 証明書管理
-    </a>
-    <a data-page="autorenew" onclick="navigate('autorenew')">
-      <span class="nav-icon">🔄</span> 自動更新
-    </a>
+    <a class="active" data-page="dashboard" onclick="navigate('dashboard')"><span class="nav-icon">📊</span> ダッシュボード</a>
+    <a data-page="license" onclick="navigate('license')"><span class="nav-icon">🛒</span> ライセンス購入・管理</a>
+    <a data-page="issue" onclick="navigate('issue')"><span class="nav-icon">📝</span> 証明書発行</a>
+    <a data-page="manage" onclick="navigate('manage')"><span class="nav-icon">🔐</span> 証明書管理</a>
+    <a data-page="autorenew" onclick="navigate('autorenew')"><span class="nav-icon">🔄</span> 自動更新</a>
     <div class="nav-divider"></div>
-    <a data-page="users" onclick="navigate('users')">
-      <span class="nav-icon">👥</span> ユーザー管理
-      <span class="coming-soon">SOON</span>
-    </a>
-    <a data-page="auditlog" onclick="navigate('auditlog')">
-      <span class="nav-icon">📋</span> 監査ログ
-      <span class="coming-soon">SOON</span>
-    </a>
-    <a data-page="api" onclick="navigate('api')">
-      <span class="nav-icon">🔗</span> API連携設定
-      <span class="coming-soon">SOON</span>
-    </a>
+    <a data-page="users" onclick="navigate('users')"><span class="nav-icon">👥</span> ユーザー管理</a>
+    <a data-page="auditlog" onclick="navigate('auditlog')"><span class="nav-icon">📋</span> 監査ログ</a>
+    <a data-page="api" onclick="navigate('api')"><span class="nav-icon">🔗</span> API連携設定</a>
   </nav>
-  <div class="sidebar-footer">
-    &copy; 2026 Caucasus — Powered by GlobalSign
-  </div>
+  <div class="sidebar-footer">&copy; 2026 Caucasus — Powered by GlobalSign</div>
 </aside>
 
-<!-- ===== MAIN ===== -->
 <div class="main">
   <div class="topbar">
     <div style="display:flex;align-items:center;gap:12px;">
@@ -286,7 +246,7 @@ textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New'
 
   <div class="content">
 
-    <!-- ========== DASHBOARD ========== -->
+    <!-- DASHBOARD -->
     <div class="page active" id="page-dashboard">
       <div class="stats-grid" id="stats-grid"></div>
       <div class="charts-grid">
@@ -306,89 +266,83 @@ textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New'
           <button class="btn btn-outline btn-sm" onclick="navigate('manage')">すべて表示 →</button>
         </div>
         <div class="table-wrap">
-          <table>
-            <thead><tr><th>コモンネーム</th><th>種別</th><th>ステータス</th><th>発行日</th><th>有効期限</th></tr></thead>
-            <tbody id="dashboard-cert-table"></tbody>
-          </table>
+          <table><thead><tr><th>コモンネーム</th><th>種別</th><th>ステータス</th><th>発行日</th><th>有効期限</th></tr></thead>
+          <tbody id="dashboard-cert-table"></tbody></table>
         </div>
       </div>
     </div>
 
-    <!-- ========== LICENSE ========== -->
+    <!-- LICENSE -->
     <div class="page" id="page-license">
-      <div class="section-header">
-        <h3>保有ライセンス</h3>
-      </div>
+      <div class="section-header"><h3>保有ライセンス</h3></div>
       <div class="license-summary" id="license-summary"></div>
       <div class="card" style="margin-bottom:22px;">
         <div class="card-title">ライセンス購入</div>
         <div class="form-group">
           <label>ライセンス種別</label>
-          <div class="radio-group" id="lic-type-group">
-            <div class="radio-card selected" data-value="subscription" onclick="selectRadio('lic-type-group',this)">
-              <div class="rc-title">SSLサブスクリプション</div>
-              <div class="rc-desc">月額課金で柔軟に管理</div>
-            </div>
-            <div class="radio-card" data-value="pack" onclick="selectRadio('lic-type-group',this)">
-              <div class="rc-title">製品パック</div>
-              <div class="rc-desc">一括購入でコスト最適化</div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>種別</label>
           <div class="pricing-grid" id="cert-type-grid">
-            <div class="pricing-card selected" data-value="DV" onclick="selectPricing(this)">
-              <div class="pc-name">DV</div>
+            <div class="pricing-card selected" data-value="DV" data-base="29800" onclick="selectPricing(this)">
+              <div class="pc-name">DV ライセンス</div>
               <div class="pc-desc">ドメイン認証</div>
-              <div class="pc-price">¥1,298<span>/年</span></div>
+              <div class="pc-price">¥29,800<span>/枚</span></div>
             </div>
-            <div class="pricing-card" data-value="OV" onclick="selectPricing(this)">
+            <div class="pricing-card" data-value="OV" data-base="59800" onclick="selectPricing(this)">
               <div class="pc-badge">人気</div>
-              <div class="pc-name">OV</div>
+              <div class="pc-name">OV ライセンス</div>
               <div class="pc-desc">企業認証</div>
-              <div class="pc-price">¥34,800<span>/年</span></div>
+              <div class="pc-price">¥59,800<span>/枚</span></div>
             </div>
-            <div class="pricing-card" data-value="EV" onclick="selectPricing(this)">
-              <div class="pc-name">EV</div>
+            <div class="pricing-card" data-value="EV" data-base="99800" onclick="selectPricing(this)">
+              <div class="pc-name">EV ライセンス</div>
               <div class="pc-desc">EV認証（最高レベル）</div>
-              <div class="pc-price">¥128,000<span>/年</span></div>
+              <div class="pc-price">¥99,800<span>/枚</span></div>
             </div>
-            <div class="pricing-card" data-value="Alpha" onclick="selectPricing(this)">
-              <div class="pc-name">AlphaSSL</div>
-              <div class="pc-desc">低コストDV証明書</div>
-              <div class="pc-price">¥6,380<span>/年</span></div>
+            <div class="pricing-card" data-value="Alpha" data-base="4980" onclick="selectPricing(this)">
+              <div class="pc-name">Alpha ライセンス</div>
+              <div class="pc-desc">低コスト証明書</div>
+              <div class="pc-price">¥4,980<span>/枚</span></div>
             </div>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>オプション</label>
-            <select class="form-control" id="lic-option">
+            <select class="form-control" id="lic-option" onchange="onOptionChange()">
               <option value="none">なし</option>
-              <option value="wildcard">ワイルドカード</option>
-              <option value="san">マルチドメイン SAN</option>
+              <option value="wildcard">ワイルドカード（ベース×3倍）</option>
+              <option value="san">マルチドメイン SAN（ベース×0.7 / 追加ドメインあたり）</option>
             </select>
+            <div class="option-price-info" id="option-price-info"></div>
+            <div class="san-count-wrap" id="san-count-wrap">
+              <label style="font-size:12px;font-weight:600;margin-top:8px;display:block;">SAN 追加ドメイン数</label>
+              <select class="form-control" id="san-count" style="width:200px;margin-top:4px;" onchange="calcPrice()">
+              </select>
+            </div>
           </div>
           <div class="form-group">
             <label>ライセンス数</label>
-            <select class="form-control" id="lic-count"></select>
+            <select class="form-control" id="lic-count" onchange="calcPrice()"></select>
           </div>
         </div>
-        <button class="btn btn-primary" onclick="purchaseLicense()">🛒 ライセンスを購入</button>
+        <div class="price-summary" id="price-summary">
+          <div>
+            <div class="ps-label">お支払い金額（税抜）</div>
+            <div class="ps-detail" id="price-detail">DV ライセンス × 1</div>
+          </div>
+          <div class="ps-amount" id="price-amount">¥29,800</div>
+        </div>
+        <button class="btn btn-primary btn-lg" onclick="purchaseLicense()">🛒 ライセンスを購入</button>
       </div>
       <div class="card">
         <div class="card-title">購入履歴</div>
         <div class="table-wrap">
-          <table>
-            <thead><tr><th>日時</th><th>種別</th><th>タイプ</th><th>オプション</th><th>数量</th></tr></thead>
-            <tbody id="purchase-history-table"></tbody>
-          </table>
+          <table><thead><tr><th>日時</th><th>ライセンス</th><th>オプション</th><th>数量</th><th>金額</th></tr></thead>
+          <tbody id="purchase-history-table"></tbody></table>
         </div>
       </div>
     </div>
 
-    <!-- ========== ISSUE ========== -->
+    <!-- ISSUE -->
     <div class="page" id="page-issue">
       <div class="card">
         <div class="card-title">証明書発行</div>
@@ -397,8 +351,12 @@ textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New'
           <div>ライセンスがありません。<a href="#" onclick="navigate('license');return false;" style="color:inherit;font-weight:700;">ライセンス購入ページ</a>から購入してください。</div>
         </div>
         <div id="issue-form">
+          <div class="alert alert-info" style="margin-bottom:20px;">
+            <span class="alert-icon">ℹ️</span>
+            <div>すべての項目は<strong>英語（アルファベット）</strong>で入力してください。日本語は使用できません。<br>証明書の有効期間は <strong>199日間</strong> です。</div>
+          </div>
           <div class="form-group">
-            <label>使用するライセンス</label>
+            <label>使用するライセンス <span style="color:var(--danger);">*</span></label>
             <select class="form-control" id="issue-license-select" onchange="onIssueLicenseChange()"></select>
           </div>
           <div class="form-group">
@@ -408,34 +366,46 @@ textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New'
           <div class="form-row">
             <div class="form-group">
               <label>コモンネーム (FQDN) <span style="color:var(--danger);">*</span></label>
-              <input type="text" class="form-control" id="issue-cn" placeholder="例: www.example.com">
-              <div class="error-msg" id="err-cn">コモンネームを入力してください</div>
+              <input type="text" class="form-control" id="issue-cn" placeholder="e.g. www.example.com">
+              <div class="hint">完全修飾ドメイン名を英語で入力</div>
+              <div class="error-msg" id="err-cn"></div>
             </div>
             <div class="form-group">
-              <label>組織名 <span style="color:var(--danger);">*</span></label>
-              <input type="text" class="form-control" id="issue-org" placeholder="例: Example Corporation">
-              <div class="error-msg" id="err-org">組織名を入力してください</div>
+              <label>組織名 (Organization) <span style="color:var(--danger);">*</span></label>
+              <input type="text" class="form-control" id="issue-org" placeholder="e.g. Example Corporation">
+              <div class="error-msg" id="err-org"></div>
             </div>
           </div>
-          <div class="form-group">
-            <label>都道府県 <span style="color:var(--danger);">*</span></label>
-            <select class="form-control" id="issue-pref">
-              <option value="">選択してください</option>
-            </select>
-            <div class="error-msg" id="err-pref">都道府県を選択してください</div>
+          <div class="form-row-3">
+            <div class="form-group">
+              <label>都道府県 (State/Province) <span style="color:var(--danger);">*</span></label>
+              <input type="text" class="form-control" id="issue-state" placeholder="e.g. Tokyo">
+              <div class="error-msg" id="err-state"></div>
+            </div>
+            <div class="form-group">
+              <label>市区町村 (City/Locality) <span style="color:var(--danger);">*</span></label>
+              <input type="text" class="form-control" id="issue-city" placeholder="e.g. Shibuya-ku">
+              <div class="error-msg" id="err-city"></div>
+            </div>
+            <div class="form-group">
+              <label>国 (Country Code) <span style="color:var(--danger);">*</span></label>
+              <input type="text" class="form-control" id="issue-country" placeholder="e.g. JP" maxlength="2" style="text-transform:uppercase;">
+              <div class="hint">ISO 3166-1 alpha-2（例: JP, US, GB）</div>
+              <div class="error-msg" id="err-country"></div>
+            </div>
           </div>
           <div class="form-group">
             <label>CSR（Certificate Signing Request） <span style="color:var(--danger);">*</span></label>
-            <textarea class="form-control" id="issue-csr" placeholder="-----BEGIN CERTIFICATE REQUEST-----&#10;...&#10;-----END CERTIFICATE REQUEST-----"></textarea>
-            <div class="hint">PEM形式で貼り付けてください（-----BEGIN CERTIFICATE REQUEST----- で始まる必要があります）</div>
-            <div class="error-msg" id="err-csr">有効なPEM形式のCSRを入力してください</div>
+            <textarea class="form-control" id="issue-csr" placeholder="-----BEGIN CERTIFICATE REQUEST-----&#10;MIICYzCCAUsCAQAwHj...&#10;-----END CERTIFICATE REQUEST-----"></textarea>
+            <div class="hint">PEM形式で貼り付けてください（-----BEGIN で始まる必要があります）</div>
+            <div class="error-msg" id="err-csr"></div>
           </div>
           <button class="btn btn-primary btn-lg" onclick="issueCertificate()">📜 証明書を発行する</button>
         </div>
       </div>
     </div>
 
-    <!-- ========== MANAGE ========== -->
+    <!-- MANAGE -->
     <div class="page" id="page-manage">
       <div class="card">
         <div class="section-header">
@@ -446,15 +416,13 @@ textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New'
           <span class="alert-icon">📭</span> 発行済みの証明書はありません。<a href="#" onclick="navigate('issue');return false;" style="color:inherit;font-weight:700;">証明書を発行</a>してください。
         </div>
         <div class="table-wrap">
-          <table>
-            <thead><tr><th>コモンネーム</th><th>種別</th><th>オプション</th><th>発行日</th><th>有効期限</th><th>残日数</th><th>ステータス</th><th>操作</th></tr></thead>
-            <tbody id="manage-cert-table"></tbody>
-          </table>
+          <table><thead><tr><th>コモンネーム</th><th>種別</th><th>オプション</th><th>発行日</th><th>有効期限</th><th>残日数</th><th>ステータス</th><th>操作</th></tr></thead>
+          <tbody id="manage-cert-table"></tbody></table>
         </div>
       </div>
     </div>
 
-    <!-- ========== AUTO RENEW ========== -->
+    <!-- AUTO RENEW -->
     <div class="page" id="page-autorenew">
       <div id="autorenew-license-warning" class="alert alert-danger" style="display:none;">
         <span class="alert-icon">🚨</span>
@@ -467,7 +435,7 @@ textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New'
       <div class="card" style="margin-bottom:22px;">
         <div class="card-title">⚙️ 自動更新設定</div>
         <div class="config-row">
-          <div><div class="config-label">自動更新を有効にする</div><div class="config-desc">有効期限の前に自動的に証明書を更新します</div></div>
+          <div><div class="config-label">自動更新を有効にする</div><div class="config-desc">証明書を自動的に更新します（ライセンスを消費します）</div></div>
           <label class="toggle-switch"><input type="checkbox" id="ar-enabled" onchange="saveAutoRenewSettings()"><span class="toggle-slider"></span></label>
         </div>
         <div class="config-row">
@@ -503,592 +471,612 @@ textarea.form-control{resize:vertical;min-height:100px;font-family:'Courier New'
       <div class="card" style="margin-bottom:22px;">
         <div class="section-header">
           <div class="card-title" style="margin:0;">自動更新対象の証明書</div>
-          <button class="btn btn-primary btn-sm" id="ar-execute-btn" onclick="executeAutoRenew()">▶ 自動更新を今すぐ実行</button>
+          <button class="btn btn-primary btn-sm" onclick="executeAutoRenew()">▶ 選択した証明書を今すぐ更新</button>
         </div>
-        <div id="ar-no-certs" class="alert alert-info" style="display:none;">
-          <span class="alert-icon">📭</span> 自動更新対象の証明書がありません。
-        </div>
+        <div id="ar-no-certs" class="alert alert-info" style="display:none;"><span class="alert-icon">📭</span> 証明書がありません。</div>
         <div class="table-wrap">
-          <table>
-            <thead><tr><th><input type="checkbox" id="ar-select-all" onchange="toggleAllArCerts(this)"></th><th>コモンネーム</th><th>種別</th><th>有効期限</th><th>残日数</th><th>次回更新予定</th><th>ステータス</th></tr></thead>
-            <tbody id="ar-cert-table"></tbody>
-          </table>
+          <table><thead><tr><th><input type="checkbox" id="ar-select-all" onchange="toggleAllArCerts(this)"></th><th>コモンネーム</th><th>種別</th><th>有効期限</th><th>残日数</th><th>次回更新予定</th><th>ステータス</th></tr></thead>
+          <tbody id="ar-cert-table"></tbody></table>
         </div>
       </div>
 
       <div class="card">
         <div class="card-title">📜 自動更新ログ</div>
         <div class="table-wrap">
+          <table><thead><tr><th>日時</th><th>コモンネーム</th><th>種別</th><th>結果</th><th>詳細</th></tr></thead>
+          <tbody id="ar-log-table"></tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <!-- USERS -->
+    <div class="page" id="page-users">
+      <div class="card" style="margin-bottom:22px;">
+        <div class="section-header">
+          <div class="card-title" style="margin:0;">ユーザー一覧</div>
+          <button class="btn btn-primary btn-sm" onclick="addDemoUser()">＋ ユーザーを追加</button>
+        </div>
+        <div class="table-wrap">
+          <table><thead><tr><th>ユーザー名</th><th>メールアドレス</th><th>ロール</th><th>ステータス</th><th>最終ログイン</th><th>操作</th></tr></thead>
+          <tbody id="users-table"></tbody></table>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">ロール権限マトリクス</div>
+        <div class="table-wrap">
           <table>
-            <thead><tr><th>日時</th><th>コモンネーム</th><th>種別</th><th>結果</th><th>詳細</th></tr></thead>
-            <tbody id="ar-log-table">
-              <tr><td colspan="5" style="text-align:center;color:var(--text-light);padding:28px;">ログはまだありません</td></tr>
+            <thead><tr><th>権限</th><th>管理者</th><th>オペレーター</th><th>閲覧者</th></tr></thead>
+            <tbody>
+              <tr><td>ライセンス購入</td><td>✅</td><td>❌</td><td>❌</td></tr>
+              <tr><td>証明書発行</td><td>✅</td><td>✅</td><td>❌</td></tr>
+              <tr><td>証明書更新</td><td>✅</td><td>✅</td><td>❌</td></tr>
+              <tr><td>自動更新設定</td><td>✅</td><td>❌</td><td>❌</td></tr>
+              <tr><td>ユーザー管理</td><td>✅</td><td>❌</td><td>❌</td></tr>
+              <tr><td>監査ログ閲覧</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>API設定</td><td>✅</td><td>❌</td><td>❌</td></tr>
+              <tr><td>ダッシュボード閲覧</td><td>✅</td><td>✅</td><td>✅</td></tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
 
-    <!-- ========== USERS (Coming Soon) ========== -->
-    <div class="page" id="page-users">
-      <div class="coming-soon-page">
-        <div class="cs-icon">👥</div>
-        <h3>ユーザー管理</h3>
-        <p>ロールベースのアクセス制御、ユーザーの招待・権限管理、アクティビティモニタリングなどの機能を準備中です。</p>
-        <div class="coming-soon-badge">🚀 アップデート準備中</div>
-      </div>
-    </div>
-
-    <!-- ========== AUDIT LOG (Coming Soon) ========== -->
+    <!-- AUDIT LOG -->
     <div class="page" id="page-auditlog">
-      <div class="coming-soon-page">
-        <div class="cs-icon">📋</div>
-        <h3>監査ログ</h3>
-        <p>証明書の発行・更新・失効など、すべての操作を時系列で記録・検索できる包括的な監査ログ機能を準備中です。</p>
-        <div class="coming-soon-badge">🚀 アップデート準備中</div>
+      <div class="card">
+        <div class="section-header">
+          <div class="card-title" style="margin:0;">監査ログ</div>
+          <div style="display:flex;gap:8px;">
+            <select class="form-control" id="audit-filter" style="width:160px;padding:6px 10px;font-size:12px;" onchange="renderAuditLog()">
+              <option value="all">すべて</option>
+              <option value="issue">証明書発行</option>
+              <option value="renew">証明書更新</option>
+              <option value="purchase">ライセンス購入</option>
+              <option value="autorenew">自動更新</option>
+              <option value="setting">設定変更</option>
+            </select>
+            <button class="btn btn-outline btn-sm" onclick="exportAuditLog()">📥 CSV出力</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table><thead><tr><th>日時</th><th>ユーザー</th><th>操作</th><th>対象</th><th>詳細</th><th>IP</th></tr></thead>
+          <tbody id="audit-log-table"></tbody></table>
+        </div>
       </div>
     </div>
 
-    <!-- ========== API (Coming Soon) ========== -->
+    <!-- API -->
     <div class="page" id="page-api">
-      <div class="coming-soon-page">
-        <div class="cs-icon">🔗</div>
-        <h3>API連携設定</h3>
-        <p>REST API / Webhook によるCI/CDパイプライン統合、外部システム連携のためのAPIキー管理・エンドポイント設定機能を準備中です。</p>
-        <div class="coming-soon-badge">🚀 アップデート準備中</div>
+      <div class="card" style="margin-bottom:22px;">
+        <div class="card-title">🔑 APIキー管理</div>
+        <div class="config-row">
+          <div>
+            <div class="config-label">API アクセスキー</div>
+            <div class="config-desc">REST API 認証に使用されます</div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <input type="text" class="form-control" id="api-key-display" value="ccs_live_••••••••••••••••••••" readonly style="width:320px;font-family:monospace;font-size:12px;background:#F8FAFC;">
+            <button class="btn btn-outline btn-sm" onclick="toggleApiKey()">👁</button>
+            <button class="btn btn-primary btn-sm" onclick="regenerateApiKey()">再生成</button>
+          </div>
+        </div>
+        <div class="config-row">
+          <div>
+            <div class="config-label">API シークレットキー</div>
+            <div class="config-desc">Webhook 署名検証に使用されます</div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <input type="text" class="form-control" value="ccs_secret_••••••••••••••••" readonly style="width:320px;font-family:monospace;font-size:12px;background:#F8FAFC;">
+            <button class="btn btn-outline btn-sm">👁</button>
+          </div>
+        </div>
+        <div class="config-row">
+          <div>
+            <div class="config-label">API 有効化</div>
+            <div class="config-desc">APIアクセスを有効/無効にします</div>
+          </div>
+          <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+        </div>
+      </div>
+      <div class="card" style="margin-bottom:22px;">
+        <div class="card-title">🔔 Webhook 設定</div>
+        <div class="form-group">
+          <label>Webhook URL</label>
+          <input type="text" class="form-control" placeholder="https://your-server.com/webhook/caucasus" id="webhook-url">
+        </div>
+        <div class="form-group">
+          <label>通知イベント</label>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
+            <label style="font-size:13px;font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" checked> 証明書発行完了</label>
+            <label style="font-size:13px;font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" checked> 証明書更新完了</label>
+            <label style="font-size:13px;font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" checked> 証明書期限切れ警告</label>
+            <label style="font-size:13px;font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox"> ライセンス残数低下</label>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="showLoading('Webhook設定を保存しています...',1000,()=>showSuccess('Webhook設定を保存しました！'))">💾 設定を保存</button>
+      </div>
+      <div class="card">
+        <div class="card-title">📖 APIエンドポイント</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>メソッド</th><th>エンドポイント</th><th>説明</th></tr></thead>
+            <tbody>
+              <tr><td><span class="badge badge-green">GET</span></td><td style="font-family:monospace;font-size:12px;">/api/v1/certificates</td><td>証明書一覧取得</td></tr>
+              <tr><td><span class="badge badge-blue">POST</span></td><td style="font-family:monospace;font-size:12px;">/api/v1/certificates/issue</td><td>証明書発行</td></tr>
+              <tr><td><span class="badge badge-blue">POST</span></td><td style="font-family:monospace;font-size:12px;">/api/v1/certificates/{id}/renew</td><td>証明書更新</td></tr>
+              <tr><td><span class="badge badge-green">GET</span></td><td style="font-family:monospace;font-size:12px;">/api/v1/licenses</td><td>ライセンス情報取得</td></tr>
+              <tr><td><span class="badge badge-blue">POST</span></td><td style="font-family:monospace;font-size:12px;">/api/v1/licenses/purchase</td><td>ライセンス購入</td></tr>
+              <tr><td><span class="badge badge-green">GET</span></td><td style="font-family:monospace;font-size:12px;">/api/v1/audit-logs</td><td>監査ログ取得</td></tr>
+              <tr><td><span class="badge badge-yellow">PUT</span></td><td style="font-family:monospace;font-size:12px;">/api/v1/settings/auto-renew</td><td>自動更新設定変更</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
-  </div><!-- /content -->
-</div><!-- /main -->
+  </div>
+</div>
 
-<!-- Loading Modal -->
 <div class="loading-overlay" id="loading-modal" style="display:none;">
   <div class="loading-box" id="loading-box"></div>
 </div>
 
 <script>
-// ==========================================================
-//  DATA STORE
-// ==========================================================
-const STORAGE_KEY = 'caucasus_data';
+// ============================================================
+//  CONSTANTS
+// ============================================================
+const STORAGE_KEY = 'caucasus_data_v2';
+const CERT_VALIDITY_DAYS = 199;
+const BASE_PRICES = { DV: 29800, OV: 59800, EV: 99800, Alpha: 4980 };
+const WILDCARD_MULTIPLIER = 3;
+const SAN_MULTIPLIER = 0.7;
 
+// ============================================================
+//  DATA STORE
+// ============================================================
 function getStore() {
   const raw = localStorage.getItem(STORAGE_KEY);
   if (raw) {
     const d = JSON.parse(raw);
     if (!d.autoRenewLogs) d.autoRenewLogs = [];
-    if (!d.autoRenew) d.autoRenew = defaultAutoRenew();
+    if (!d.autoRenew) d.autoRenew = defaultAR();
+    if (!d.auditLogs) d.auditLogs = [];
+    if (!d.users) d.users = defaultUsers();
     return d;
   }
-  return { licenses: {}, certificates: [], purchaseHistory: [], autoRenew: defaultAutoRenew(), autoRenewLogs: [] };
+  return { licenses:{}, certificates:[], purchaseHistory:[], autoRenew:defaultAR(), autoRenewLogs:[], auditLogs:[], users:defaultUsers(), apiKey:generateApiKey() };
+}
+function defaultAR(){ return { enabled:false, daysBefore:30, time:'03:00', notify:true, email:'', retry:3, acme:false }; }
+function defaultUsers(){ return [
+  { name:'Admin User', email:'admin@example.com', role:'管理者', status:'active', lastLogin:'2026-04-23 09:12' },
+  { name:'Operator A', email:'operator@example.com', role:'オペレーター', status:'active', lastLogin:'2026-04-22 17:45' },
+  { name:'Viewer B', email:'viewer@example.com', role:'閲覧者', status:'active', lastLogin:'2026-04-20 11:30' },
+]; }
+function generateApiKey(){ return 'ccs_live_' + Array.from({length:32},()=>'abcdefghijklmnopqrstuvwxyz0123456789'[Math.random()*36|0]).join(''); }
+function saveStore(d){ localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }
+function fmt(d){ return d.toISOString().split('T')[0]; }
+function fmtTime(d){ return d.toISOString().replace('T',' ').substring(0,19); }
+function daysAgo(n){ const d=new Date(); d.setDate(d.getDate()-n); return fmt(d); }
+function daysAhead(n){ const d=new Date(); d.setDate(d.getDate()+n); return fmt(d); }
+function daysBetween(a,b){ return Math.ceil((new Date(b)-new Date(a))/86400000); }
+function today(){ return fmt(new Date()); }
+function totalLicenses(s){ return Object.values(s.licenses).reduce((a,b)=>a+b,0); }
+function addAudit(store, action, target, detail) {
+  store.auditLogs.unshift({ date:fmtTime(new Date()), user:'Admin User', action, target, detail, ip:'192.168.1.'+(Math.random()*254+1|0) });
+  if (store.auditLogs.length > 200) store.auditLogs.length = 200;
 }
 
-function defaultAutoRenew() {
-  return { enabled: false, daysBefore: 30, time: '03:00', notify: true, email: '', retry: 3, acme: false };
-}
-
-function saveStore(data) { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
-
-function daysAgo(n) { const d = new Date(); d.setDate(d.getDate() - n); return fmt(d); }
-function daysAhead(n) { const d = new Date(); d.setDate(d.getDate() + n); return fmt(d); }
-function fmt(d) { return d.toISOString().split('T')[0]; }
-function daysBetween(a, b) { return Math.ceil((new Date(b) - new Date(a)) / 86400000); }
-function today() { return fmt(new Date()); }
-
-function totalLicenses(store) { return Object.values(store.licenses).reduce((s, v) => s + v, 0); }
-
-// ==========================================================
-//  INIT DEMO DATA
-// ==========================================================
+// ============================================================
+//  INIT DEMO
+// ============================================================
 function initDemo() {
-  const store = getStore();
-  if (store.certificates.length === 0 && Object.keys(store.licenses).length === 0) {
-    store.licenses = { DV: 5, OV: 3, EV: 1, Alpha: 10 };
-    store.certificates = [
-      { cn:'www.example.com', org:'Example Corp', pref:'東京都', type:'DV', option:'none', issued:daysAgo(120), expires:daysAhead(245), status:'active' },
-      { cn:'api.example.com', org:'Example Corp', pref:'東京都', type:'OV', option:'none', issued:daysAgo(60), expires:daysAhead(305), status:'active' },
-      { cn:'*.example.com', org:'Example Corp', pref:'東京都', type:'DV', option:'wildcard', issued:daysAgo(300), expires:daysAhead(65), status:'active' },
-      { cn:'shop.example.com', org:'Example Corp', pref:'大阪府', type:'EV', option:'none', issued:daysAgo(350), expires:daysAhead(15), status:'expiring' },
-      { cn:'mail.example.com', org:'Example Corp', pref:'東京都', type:'Alpha', option:'none', issued:daysAgo(400), expires:daysAgo(35), status:'expired' },
-      { cn:'cdn.example.com', org:'Example Corp', pref:'神奈川県', type:'DV', option:'san', issued:daysAgo(200), expires:daysAhead(165), status:'active' },
-      { cn:'staging.example.com', org:'Example Corp', pref:'東京都', type:'Alpha', option:'none', issued:daysAgo(340), expires:daysAhead(25), status:'expiring' },
+  const s = getStore();
+  if (s.certificates.length === 0 && Object.keys(s.licenses).length === 0) {
+    s.licenses = { DV:5, OV:3, EV:1, Alpha:10 };
+    s.apiKey = generateApiKey();
+    s.certificates = [
+      { cn:'www.example.com', org:'Example Corp', state:'Tokyo', city:'Shibuya', country:'JP', type:'DV', option:'none', issued:daysAgo(120), expires:daysAhead(79), status:'active' },
+      { cn:'api.example.com', org:'Example Corp', state:'Tokyo', city:'Minato', country:'JP', type:'OV', option:'none', issued:daysAgo(60), expires:daysAhead(139), status:'active' },
+      { cn:'*.example.com', org:'Example Corp', state:'Tokyo', city:'Chiyoda', country:'JP', type:'DV', option:'wildcard', issued:daysAgo(170), expires:daysAhead(29), status:'expiring' },
+      { cn:'shop.example.com', org:'Example Corp', state:'Osaka', city:'Osaka', country:'JP', type:'EV', option:'none', issued:daysAgo(190), expires:daysAhead(9), status:'expiring' },
+      { cn:'mail.example.com', org:'Example Corp', state:'Tokyo', city:'Shinjuku', country:'JP', type:'Alpha', option:'none', issued:daysAgo(220), expires:daysAgo(21), status:'expired' },
+      { cn:'cdn.example.com', org:'Example Corp', state:'Kanagawa', city:'Yokohama', country:'JP', type:'DV', option:'san', issued:daysAgo(80), expires:daysAhead(119), status:'active' },
+      { cn:'staging.example.com', org:'Example Corp', state:'Tokyo', city:'Meguro', country:'JP', type:'Alpha', option:'none', issued:daysAgo(180), expires:daysAhead(19), status:'expiring' },
     ];
-    store.purchaseHistory = [
-      { date:daysAgo(180), type:'subscription', certType:'DV', option:'none', count:5 },
-      { date:daysAgo(90), type:'pack', certType:'OV', option:'none', count:3 },
-      { date:daysAgo(60), type:'subscription', certType:'EV', option:'none', count:1 },
-      { date:daysAgo(30), type:'pack', certType:'Alpha', option:'none', count:10 },
+    s.purchaseHistory = [
+      { date:daysAgo(180), certType:'DV', option:'none', count:5, amount:149000 },
+      { date:daysAgo(90), certType:'OV', option:'none', count:3, amount:179400 },
+      { date:daysAgo(60), certType:'EV', option:'none', count:1, amount:99800 },
+      { date:daysAgo(30), certType:'Alpha', option:'none', count:10, amount:49800 },
     ];
-    saveStore(store);
+    s.auditLogs = [
+      { date:daysAgo(1)+' 14:22:10', user:'Admin User', action:'purchase', target:'DV ライセンス', detail:'5ライセンス購入', ip:'192.168.1.10' },
+      { date:daysAgo(2)+' 09:05:33', user:'Operator A', action:'issue', target:'www.example.com', detail:'DV証明書発行', ip:'192.168.1.22' },
+      { date:daysAgo(3)+' 03:00:01', user:'System', action:'autorenew', target:'api.example.com', detail:'自動更新成功', ip:'10.0.0.1' },
+      { date:daysAgo(5)+' 11:45:00', user:'Admin User', action:'setting', target:'自動更新設定', detail:'更新タイミングを30日前に変更', ip:'192.168.1.10' },
+    ];
+    saveStore(s);
   }
 }
 
-// ==========================================================
+// ============================================================
 //  NAVIGATION
-// ==========================================================
-const pageTitles = {
-  dashboard:'ダッシュボード', license:'ライセンス購入・管理', issue:'証明書発行',
-  manage:'証明書管理', autorenew:'自動更新', users:'ユーザー管理',
-  auditlog:'監査ログ', api:'API連携設定'
-};
+// ============================================================
+const pageTitles = { dashboard:'ダッシュボード', license:'ライセンス購入・管理', issue:'証明書発行', manage:'証明書管理', autorenew:'自動更新', users:'ユーザー管理', auditlog:'監査ログ', api:'API連携設定' };
 
 function navigate(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + page).classList.add('active');
-  document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
-  const link = document.querySelector(`.sidebar-nav a[data-page="${page}"]`);
-  if (link) link.classList.add('active');
-  document.getElementById('page-title').textContent = pageTitles[page] || page;
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+page).classList.add('active');
+  document.querySelectorAll('.sidebar-nav a').forEach(a=>a.classList.remove('active'));
+  const l=document.querySelector(`.sidebar-nav a[data-page="${page}"]`);
+  if(l) l.classList.add('active');
+  document.getElementById('page-title').textContent = pageTitles[page]||page;
   document.getElementById('sidebar').classList.remove('open');
-  const renderers = { dashboard:renderDashboard, license:renderLicense, issue:renderIssue, manage:renderManage, autorenew:renderAutoRenew };
-  if (renderers[page]) renderers[page]();
+  const r={dashboard:renderDashboard,license:renderLicense,issue:()=>renderIssue(),manage:renderManage,autorenew:renderAutoRenew,users:renderUsers,auditlog:renderAuditLog,api:renderApi};
+  if(r[page]) r[page]();
 }
 
-// ==========================================================
+// ============================================================
 //  DASHBOARD
-// ==========================================================
+// ============================================================
 function renderDashboard() {
-  const store = getStore();
-  updateStatuses(store);
-  const certs = store.certificates;
-  const tl = totalLicenses(store);
-  updateBadge(tl);
-
-  const active = certs.filter(c => c.status === 'active').length;
-  const expiring = certs.filter(c => c.status === 'expiring').length;
-  const expired = certs.filter(c => c.status === 'expired').length;
-
+  const s=getStore(); updateStatuses(s);
+  const c=s.certificates, tl=totalLicenses(s); updateBadge(tl);
+  const active=c.filter(x=>x.status==='active').length, expiring=c.filter(x=>x.status==='expiring').length, expired=c.filter(x=>x.status==='expired').length;
   document.getElementById('stats-grid').innerHTML = `
-    <div class="stat-card blue"><div class="stat-icon">📜</div><div class="stat-label">発行済み証明書</div><div class="stat-value">${certs.length}</div><div class="stat-sub">全証明書</div></div>
+    <div class="stat-card blue"><div class="stat-icon">📜</div><div class="stat-label">発行済み証明書</div><div class="stat-value">${c.length}</div><div class="stat-sub">全証明書</div></div>
     <div class="stat-card green"><div class="stat-icon">✅</div><div class="stat-label">有効</div><div class="stat-value">${active}</div><div class="stat-sub">正常稼働中</div></div>
     <div class="stat-card yellow"><div class="stat-icon">⏰</div><div class="stat-label">更新予定</div><div class="stat-value">${expiring}</div><div class="stat-sub">30日以内に期限切れ</div></div>
-    <div class="stat-card red"><div class="stat-icon">🚫</div><div class="stat-label">期限切れ</div><div class="stat-value">${expired}</div><div class="stat-sub">要対応</div></div>
-  `;
-
-  drawDonut(active, expiring, expired);
-  renderBarChart(certs);
-
-  document.getElementById('dashboard-cert-table').innerHTML = certs.slice(0, 5).map(c => `
-    <tr><td><strong>${c.cn}</strong></td><td><span class="badge badge-blue">${c.type}${c.option !== 'none' ? ' + ' + optionLabel(c.option) : ''}</span></td><td>${statusBadge(c)}</td><td>${c.issued}</td><td>${c.expires}</td></tr>
-  `).join('');
+    <div class="stat-card red"><div class="stat-icon">🚫</div><div class="stat-label">期限切れ</div><div class="stat-value">${expired}</div><div class="stat-sub">要対応</div></div>`;
+  drawDonut(active,expiring,expired);
+  renderBarChart(c);
+  document.getElementById('dashboard-cert-table').innerHTML = c.slice(0,5).map(x=>`<tr><td><strong>${x.cn}</strong></td><td><span class="badge badge-blue">${x.type}${x.option!=='none'?' + '+optionLabel(x.option):''}</span></td><td>${statusBadge(x)}</td><td>${x.issued}</td><td>${x.expires}</td></tr>`).join('');
+}
+function statusBadge(c){ if(c.status==='active') return '<span class="badge badge-green">有効</span>'; if(c.status==='expiring') return '<span class="badge badge-yellow">更新予定</span>'; return '<span class="badge badge-red">期限切れ</span>'; }
+function drawDonut(a,e,x){
+  const cv=document.getElementById('donutCanvas'); if(!cv) return;
+  const ctx=cv.getContext('2d'), total=a+e+x||1;
+  const data=[{v:a,c:'#10B981',l:'有効'},{v:e,c:'#F59E0B',l:'更新予定'},{v:x,c:'#EF4444',l:'期限切れ'}];
+  ctx.clearRect(0,0,cv.width,cv.height);
+  const cx=cv.width/2,cy=cv.height/2,r=82,lw=26; let st=-Math.PI/2;
+  if(total===0){ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.strokeStyle='#E2E8F0';ctx.lineWidth=lw;ctx.stroke();}
+  else data.forEach(d=>{if(!d.v)return;const an=(d.v/total)*Math.PI*2;ctx.beginPath();ctx.arc(cx,cy,r,st,st+an);ctx.strokeStyle=d.c;ctx.lineWidth=lw;ctx.lineCap='butt';ctx.stroke();st+=an;});
+  ctx.fillStyle='#1E293B';ctx.font='bold 26px -apple-system,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(a+e+x,cx,cy-6);
+  ctx.font='11px -apple-system,sans-serif';ctx.fillStyle='#64748B';ctx.fillText('Total',cx,cy+14);
+  document.getElementById('donut-legend').innerHTML=data.map(d=>`<div class="legend-item"><div class="legend-dot" style="background:${d.c}"></div>${d.l}: ${d.v}</div>`).join('');
+}
+function renderBarChart(certs){
+  const months=[],counts=[],now=new Date();
+  for(let i=5;i>=0;i--){const d=new Date(now.getFullYear(),now.getMonth()-i,1);const k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');months.push(d.toLocaleDateString('ja-JP',{month:'short'}));counts.push(certs.filter(c=>c.issued.startsWith(k)).length);}
+  const demo=[3,5,2,7,4,6],vals=counts.some(v=>v>0)?counts:demo,max=Math.max(...vals,1),cols=['#BFDBFE','#93C5FD','#60A5FA','#3B82F6','#2563EB','#0055DE'];
+  document.getElementById('bar-chart').innerHTML=months.map((m,i)=>{const h=Math.max((vals[i]/max)*140,vals[i]>0?8:4);return`<div class="bar-item"><div class="bar-value">${vals[i]}</div><div class="bar-fill" style="height:${h}px;background:${cols[i]};"></div><div class="bar-label">${m}</div></div>`;}).join('');
 }
 
-function statusBadge(c) {
-  if (c.status === 'active') return '<span class="badge badge-green">有効</span>';
-  if (c.status === 'expiring') return '<span class="badge badge-yellow">更新予定</span>';
-  return '<span class="badge badge-red">期限切れ</span>';
-}
-
-function drawDonut(active, expiring, expired) {
-  const canvas = document.getElementById('donutCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const total = active + expiring + expired || 1;
-  const data = [
-    { value: active, color: '#10B981', label: '有効' },
-    { value: expiring, color: '#F59E0B', label: '更新予定' },
-    { value: expired, color: '#EF4444', label: '期限切れ' },
-  ];
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  const cx = canvas.width / 2, cy = canvas.height / 2, r = 82, lw = 26;
-  let start = -Math.PI / 2;
-  if (total === 0) {
-    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    ctx.strokeStyle = '#E2E8F0'; ctx.lineWidth = lw; ctx.stroke();
-  } else {
-    data.forEach(d => {
-      if (d.value === 0) return;
-      const angle = (d.value / total) * Math.PI * 2;
-      ctx.beginPath(); ctx.arc(cx, cy, r, start, start + angle);
-      ctx.strokeStyle = d.color; ctx.lineWidth = lw; ctx.lineCap = 'butt'; ctx.stroke();
-      start += angle;
-    });
-  }
-  ctx.fillStyle = '#1E293B'; ctx.font = 'bold 26px -apple-system, sans-serif';
-  ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(active + expiring + expired, cx, cy - 6);
-  ctx.font = '11px -apple-system, sans-serif'; ctx.fillStyle = '#64748B'; ctx.fillText('Total', cx, cy + 14);
-  document.getElementById('donut-legend').innerHTML = data.map(d =>
-    `<div class="legend-item"><div class="legend-dot" style="background:${d.color}"></div>${d.label}: ${d.value}</div>`
-  ).join('');
-}
-
-function renderBarChart(certs) {
-  const months = [];
-  const counts = [];
-  const now = new Date();
-  for (let i = 5; i >= 0; i--) {
-    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
-    const key = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0');
-    months.push(d.toLocaleDateString('ja-JP', { month: 'short' }));
-    counts.push(certs.filter(c => c.issued.startsWith(key)).length);
-  }
-  // Ensure some visual data for demo
-  const demo = [3, 5, 2, 7, 4, counts[5] || 6];
-  const values = counts.some(v => v > 0) ? counts : demo;
-  const max = Math.max(...values, 1);
-  const colors = ['#BFDBFE','#93C5FD','#60A5FA','#3B82F6','#2563EB','#0055DE'];
-  document.getElementById('bar-chart').innerHTML = months.map((m, i) => {
-    const h = Math.max((values[i] / max) * 140, values[i] > 0 ? 8 : 4);
-    return `<div class="bar-item"><div class="bar-value">${values[i]}</div><div class="bar-fill" style="height:${h}px;background:${colors[i]};"></div><div class="bar-label">${m}</div></div>`;
-  }).join('');
-}
-
-// ==========================================================
+// ============================================================
 //  LICENSE
-// ==========================================================
-function renderLicense() {
-  const store = getStore();
-  updateBadge(totalLicenses(store));
-  const types = ['DV','OV','EV','Alpha'];
-  document.getElementById('license-summary').innerHTML = types.map(t => `
-    <div class="license-item"><div class="li-type">${t}</div><div class="li-count">${store.licenses[t] || 0}</div><div class="li-label">利用可能ライセンス</div></div>
-  `).join('');
-  document.getElementById('purchase-history-table').innerHTML = (store.purchaseHistory.length === 0
-    ? `<tr><td colspan="5" style="text-align:center;color:var(--text-light);padding:24px;">購入履歴はありません</td></tr>`
-    : store.purchaseHistory.map(p => `
-    <tr><td>${p.date}</td><td>${p.type === 'subscription' ? 'サブスクリプション' : '製品パック'}</td><td><span class="badge badge-blue">${p.certType}</span></td><td>${optionLabel(p.option)}</td><td>${p.count}</td></tr>
-  `).join(''));
+// ============================================================
+function renderLicense(){
+  const s=getStore(); updateBadge(totalLicenses(s));
+  const types=['DV','OV','EV','Alpha'];
+  document.getElementById('license-summary').innerHTML=types.map(t=>`<div class="license-item"><div class="li-type">${t} ライセンス</div><div class="li-count">${s.licenses[t]||0}</div><div class="li-label">利用可能</div></div>`).join('');
+  document.getElementById('purchase-history-table').innerHTML = s.purchaseHistory.length===0
+    ? '<tr><td colspan="5" style="text-align:center;color:var(--text-light);padding:24px;">購入履歴はありません</td></tr>'
+    : s.purchaseHistory.map(p=>`<tr><td>${p.date}</td><td><span class="badge badge-blue">${p.certType}</span></td><td>${optionLabel(p.option||'none')}</td><td>${p.count}</td><td>¥${(p.amount||0).toLocaleString()}</td></tr>`).join('');
+  calcPrice();
+}
+function optionLabel(o){ if(o==='wildcard') return 'ワイルドカード'; if(o==='san') return 'マルチドメインSAN'; return 'なし'; }
+function selectPricing(el){ document.querySelectorAll('#cert-type-grid .pricing-card').forEach(c=>c.classList.remove('selected')); el.classList.add('selected'); onOptionChange(); }
+function onOptionChange(){
+  const opt=document.getElementById('lic-option').value;
+  const sel=document.querySelector('#cert-type-grid .pricing-card.selected');
+  const base=parseInt(sel?.dataset.base||29800);
+  const info=document.getElementById('option-price-info');
+  const sanWrap=document.getElementById('san-count-wrap');
+  if(opt==='wildcard'){info.style.display='block';info.textContent=`ワイルドカード: ¥${base} × 3 = ¥${(base*WILDCARD_MULTIPLIER).toLocaleString()} / ライセンス`;sanWrap.style.display='none';}
+  else if(opt==='san'){info.style.display='block';info.textContent=`SAN追加1ドメインあたり: ¥${Math.round(base*SAN_MULTIPLIER).toLocaleString()}`;sanWrap.style.display='block';}
+  else{info.style.display='none';sanWrap.style.display='none';}
+  calcPrice();
+}
+function calcPrice(){
+  const sel=document.querySelector('#cert-type-grid .pricing-card.selected');
+  const base=parseInt(sel?.dataset.base||29800);
+  const typeName=sel?.dataset.value||'DV';
+  const opt=document.getElementById('lic-option').value;
+  const count=parseInt(document.getElementById('lic-count').value)||1;
+  const sanCount=parseInt(document.getElementById('san-count').value)||1;
+  let unitPrice=base;
+  let detailParts=[`${typeName} ライセンス`];
+  if(opt==='wildcard'){unitPrice=base*WILDCARD_MULTIPLIER;detailParts.push('+ ワイルドカード');}
+  else if(opt==='san'){unitPrice=base+Math.round(base*SAN_MULTIPLIER)*sanCount;detailParts.push(`+ SAN ${sanCount}ドメイン`);}
+  const total=unitPrice*count;
+  document.getElementById('price-detail').textContent=detailParts.join(' ')+` × ${count}`;
+  document.getElementById('price-amount').textContent='¥'+total.toLocaleString();
+  return {typeName,opt,count,total,sanCount};
+}
+function purchaseLicense(){
+  const s=getStore();
+  const {typeName,opt,count,total,sanCount}=calcPrice();
+  s.licenses[typeName]=(s.licenses[typeName]||0)+count;
+  s.purchaseHistory.unshift({date:today(),certType:typeName,option:opt,count,amount:total});
+  addAudit(s,'purchase',typeName+' ライセンス',`${count}ライセンス購入 ¥${total.toLocaleString()}`);
+  saveStore(s);
+  showLoading('ライセンスを購入しています...',1800,()=>{showSuccess(`${typeName} ライセンス × ${count} の購入が完了しました！`,()=>renderLicense());});
 }
 
-function optionLabel(opt) {
-  if (opt === 'wildcard') return 'ワイルドカード';
-  if (opt === 'san') return 'マルチドメインSAN';
-  return 'なし';
-}
-
-function selectRadio(gid, el) {
-  document.querySelectorAll(`#${gid} .radio-card`).forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
-}
-function selectPricing(el) {
-  document.querySelectorAll('#cert-type-grid .pricing-card').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
-}
-
-function purchaseLicense() {
-  const store = getStore();
-  const licType = document.querySelector('#lic-type-group .radio-card.selected')?.dataset.value || 'subscription';
-  const certType = document.querySelector('#cert-type-grid .pricing-card.selected')?.dataset.value || 'DV';
-  const option = document.getElementById('lic-option').value;
-  const count = parseInt(document.getElementById('lic-count').value);
-  store.licenses[certType] = (store.licenses[certType] || 0) + count;
-  store.purchaseHistory.unshift({ date: today(), type: licType, certType, option, count });
-  saveStore(store);
-  showLoading('ライセンスを購入しています...', 1800, () => {
-    showSuccess(`${certType} ライセンス × ${count} の購入が完了しました！`, () => renderLicense());
-  });
-}
-
-// ==========================================================
+// ============================================================
 //  ISSUE
-// ==========================================================
-const PREFECTURES = ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'];
+// ============================================================
+function renderIssue(preType){
+  const s=getStore(); updateBadge(totalLicenses(s));
+  const sel=document.getElementById('issue-license-select');
+  sel.innerHTML='<option value="">ライセンスを選択してください</option>';
+  Object.entries(s.licenses).forEach(([t,c])=>{if(c>0){const o=document.createElement('option');o.value=t;o.textContent=`${t} ライセンス（残: ${c}）`;if(preType===t)o.selected=true;sel.appendChild(o);}});
+  const has=totalLicenses(s)>0;
+  document.getElementById('issue-no-license').style.display=has?'none':'flex';
+  document.getElementById('issue-form').style.display=has?'block':'none';
+  clearErrors(); onIssueLicenseChange();
+}
+function onIssueLicenseChange(){const v=document.getElementById('issue-license-select').value;document.getElementById('issue-cert-type').value=v?`${v} SSL証明書（有効期間: ${CERT_VALIDITY_DAYS}日）`:'';}
+function clearErrors(){document.querySelectorAll('.error-msg').forEach(e=>{e.style.display='none';e.textContent='';});document.querySelectorAll('.form-control.error').forEach(e=>e.classList.remove('error'));}
+function showFieldError(errId,inputId,msg){const e=document.getElementById(errId);e.textContent=msg;e.style.display='block';if(inputId)document.getElementById(inputId).classList.add('error');}
 
-let prefPopulated = false;
-function renderIssue(preselectedType) {
-  const store = getStore();
-  updateBadge(totalLicenses(store));
-  if (!prefPopulated) {
-    const sel = document.getElementById('issue-pref');
-    PREFECTURES.forEach(p => { const o = document.createElement('option'); o.value = p; o.textContent = p; sel.appendChild(o); });
-    prefPopulated = true;
-  }
-  const licSel = document.getElementById('issue-license-select');
-  licSel.innerHTML = '<option value="">ライセンスを選択してください</option>';
-  Object.entries(store.licenses).forEach(([type, count]) => {
-    if (count > 0) {
-      const o = document.createElement('option'); o.value = type;
-      o.textContent = `${type}（残: ${count}）`;
-      if (preselectedType === type) o.selected = true;
-      licSel.appendChild(o);
-    }
-  });
-  const has = totalLicenses(store) > 0;
-  document.getElementById('issue-no-license').style.display = has ? 'none' : 'flex';
-  document.getElementById('issue-form').style.display = has ? 'block' : 'none';
+function hasJapanese(str){ return /[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]/.test(str); }
+function isAsciiOnly(str){ return /^[\x20-\x7E]*$/.test(str); }
+
+function issueCertificate(){
   clearErrors();
-  onIssueLicenseChange();
-}
+  const s=getStore();
+  const type=document.getElementById('issue-license-select').value;
+  const cn=document.getElementById('issue-cn').value.trim();
+  const org=document.getElementById('issue-org').value.trim();
+  const state=document.getElementById('issue-state').value.trim();
+  const city=document.getElementById('issue-city').value.trim();
+  const country=document.getElementById('issue-country').value.trim().toUpperCase();
+  const csr=document.getElementById('issue-csr').value.trim();
+  let ok=true;
+  if(!type){alert('ライセンスを選択してください。');return;}
+  if(!cn){showFieldError('err-cn','issue-cn','コモンネームを入力してください。');ok=false;}
+  else if(hasJapanese(cn)||!isAsciiOnly(cn)){showFieldError('err-cn','issue-cn','英語（ASCII文字）で入力してください。日本語は使用できません。');ok=false;}
+  if(!org){showFieldError('err-org','issue-org','組織名を入力してください。');ok=false;}
+  else if(hasJapanese(org)||!isAsciiOnly(org)){showFieldError('err-org','issue-org','英語（ASCII文字）で入力してください。日本語は使用できません。');ok=false;}
+  if(!state){showFieldError('err-state','issue-state','都道府県を入力してください。');ok=false;}
+  else if(hasJapanese(state)||!isAsciiOnly(state)){showFieldError('err-state','issue-state','英語（ASCII文字）で入力してください。例: Tokyo');ok=false;}
+  if(!city){showFieldError('err-city','issue-city','市区町村を入力してください。');ok=false;}
+  else if(hasJapanese(city)||!isAsciiOnly(city)){showFieldError('err-city','issue-city','英語（ASCII文字）で入力してください。例: Shibuya-ku');ok=false;}
+  if(!country){showFieldError('err-country','issue-country','国コードを入力してください。');ok=false;}
+  else if(!/^[A-Z]{2}$/.test(country)){showFieldError('err-country','issue-country','2文字の国コードを英語で入力してください（例: JP）。');ok=false;}
+  if(!csr){showFieldError('err-csr','issue-csr','CSRを入力してください。');ok=false;}
+  else if(!csr.startsWith('-----BEGIN')){showFieldError('err-csr','issue-csr','CSRは -----BEGIN で始まるPEM形式である必要があります。');ok=false;}
+  if(!ok) return;
+  if((s.licenses[type]||0)<1){alert('ライセンスが不足しています。');return;}
 
-function onIssueLicenseChange() {
-  const v = document.getElementById('issue-license-select').value;
-  document.getElementById('issue-cert-type').value = v ? `${v} SSL証明書` : '';
-}
-
-function clearErrors() {
-  document.querySelectorAll('.error-msg').forEach(e => e.style.display = 'none');
-  document.querySelectorAll('.form-control.error').forEach(e => e.classList.remove('error'));
-}
-
-function showError(id, inputId) {
-  document.getElementById(id).style.display = 'block';
-  if (inputId) document.getElementById(inputId).classList.add('error');
-}
-
-function validateCSR(csr) {
-  return csr.trim().startsWith('-----BEGIN');
-}
-
-function issueCertificate() {
-  clearErrors();
-  const store = getStore();
-  const type = document.getElementById('issue-license-select').value;
-  const cn = document.getElementById('issue-cn').value.trim();
-  const org = document.getElementById('issue-org').value.trim();
-  const pref = document.getElementById('issue-pref').value;
-  const csr = document.getElementById('issue-csr').value.trim();
-  let valid = true;
-
-  if (!type) { alert('ライセンスを選択してください。'); return; }
-  if (!cn) { showError('err-cn','issue-cn'); valid = false; }
-  if (!org) { showError('err-org','issue-org'); valid = false; }
-  if (!pref) { showError('err-pref','issue-pref'); valid = false; }
-  if (!csr || !validateCSR(csr)) { showError('err-csr','issue-csr'); valid = false; }
-  if (!valid) return;
-  if ((store.licenses[type] || 0) < 1) { alert('ライセンスが不足しています。'); return; }
-
-  store.licenses[type]--;
-  const now = new Date();
-  const exp = new Date(now); exp.setFullYear(exp.getFullYear() + 1);
-  const option = store.certificates.find(c => c.cn === cn)?.option || 'none';
-  store.certificates.unshift({ cn, org, pref, type, option, issued: fmt(now), expires: fmt(exp), status: 'active' });
-  saveStore(store);
+  s.licenses[type]--;
+  const now=new Date(),exp=new Date(now); exp.setDate(exp.getDate()+CERT_VALIDITY_DAYS);
+  s.certificates.unshift({cn,org,state,city,country,type,option:'none',issued:fmt(now),expires:fmt(exp),status:'active'});
+  addAudit(s,'issue',cn,`${type}証明書発行 有効期限:${fmt(exp)}`);
+  saveStore(s);
 
   showLoadingMultiStep([
-    { text: 'CSRを検証しています...', duration: 1200 },
-    { text: 'ドメイン所有権を確認しています...', duration: 1000 },
-    { text: '証明書を生成しています...', duration: 800 },
-  ], () => {
-    showSuccess('証明書の発行が完了しました！', () => {
-      document.getElementById('issue-cn').value = '';
-      document.getElementById('issue-org').value = '';
-      document.getElementById('issue-pref').value = '';
-      document.getElementById('issue-csr').value = '';
-      renderIssue();
-    });
-  });
+    {text:'CSRを検証しています...',duration:1200},
+    {text:'ドメイン所有権を確認しています...',duration:1000},
+    {text:'証明書を生成しています...',duration:800},
+  ],()=>{showSuccess('証明書の発行が完了しました！',()=>{
+    ['issue-cn','issue-org','issue-state','issue-city','issue-country','issue-csr'].forEach(id=>document.getElementById(id).value='');
+    renderIssue();
+  });});
 }
 
-// ==========================================================
+// ============================================================
 //  MANAGE
-// ==========================================================
-function renderManage() {
-  const store = getStore();
-  updateStatuses(store);
-  updateBadge(totalLicenses(store));
-  const certs = store.certificates;
-  document.getElementById('manage-count-badge').textContent = `${certs.length} 件`;
-  document.getElementById('manage-empty').style.display = certs.length === 0 ? 'flex' : 'none';
-  document.getElementById('manage-cert-table').innerHTML = certs.map((c, i) => {
-    const rem = daysBetween(today(), c.expires);
-    const remText = rem > 0 ? `<span style="font-weight:700;${rem <= 30 ? 'color:var(--warning);' : ''}">${rem}日</span>` : '<span style="color:var(--danger);font-weight:700;">期限切れ</span>';
-    return `<tr>
-      <td><strong>${c.cn}</strong></td>
-      <td><span class="badge badge-blue">${c.type}</span></td>
-      <td>${optionLabel(c.option)}</td>
-      <td>${c.issued}</td><td>${c.expires}</td>
-      <td>${remText}</td>
-      <td>${statusBadge(c)}</td>
-      <td><button class="btn btn-outline btn-sm" onclick="renewCert(${i})">🔄 更新</button></td>
-    </tr>`;
+// ============================================================
+function renderManage(){
+  const s=getStore(); updateStatuses(s); updateBadge(totalLicenses(s));
+  const c=s.certificates;
+  document.getElementById('manage-count-badge').textContent=c.length+'件';
+  document.getElementById('manage-empty').style.display=c.length===0?'flex':'none';
+  document.getElementById('manage-cert-table').innerHTML=c.map((x,i)=>{
+    const rem=daysBetween(today(),x.expires);
+    const remT=rem>0?`<span style="font-weight:700;${rem<=30?'color:var(--warning);':''}">${rem}日</span>`:'<span style="color:var(--danger);font-weight:700;">期限切れ</span>';
+    return `<tr><td><strong>${x.cn}</strong></td><td><span class="badge badge-blue">${x.type}</span></td><td>${optionLabel(x.option)}</td><td>${x.issued}</td><td>${x.expires}</td><td>${remT}</td><td>${statusBadge(x)}</td><td><button class="btn btn-outline btn-sm" onclick="renewCert(${i})">🔄 更新</button></td></tr>`;
   }).join('');
 }
-
-function renewCert(index) {
-  const store = getStore();
-  const cert = store.certificates[index];
-  navigate('issue');
-  setTimeout(() => renderIssue(cert.type), 50);
-  setTimeout(() => {
-    document.getElementById('issue-cn').value = cert.cn;
-    document.getElementById('issue-org').value = cert.org;
-    document.getElementById('issue-pref').value = cert.pref;
-  }, 100);
+function renewCert(i){
+  const s=getStore(),c=s.certificates[i]; navigate('issue');
+  setTimeout(()=>renderIssue(c.type),50);
+  setTimeout(()=>{
+    document.getElementById('issue-cn').value=c.cn;
+    document.getElementById('issue-org').value=c.org;
+    document.getElementById('issue-state').value=c.state||'';
+    document.getElementById('issue-city').value=c.city||'';
+    document.getElementById('issue-country').value=c.country||'JP';
+  },100);
+}
+function updateStatuses(s){
+  const t=today();
+  s.certificates.forEach(c=>{const r=daysBetween(t,c.expires);if(r<=0)c.status='expired';else if(r<=30)c.status='expiring';else c.status='active';});
+  saveStore(s);
 }
 
-function updateStatuses(store) {
-  const t = today();
-  store.certificates.forEach(c => {
-    const rem = daysBetween(t, c.expires);
-    if (rem <= 0) c.status = 'expired';
-    else if (rem <= 30) c.status = 'expiring';
-    else c.status = 'active';
-  });
-  saveStore(store);
-}
-
-// ==========================================================
+// ============================================================
 //  AUTO RENEW
-// ==========================================================
-function renderAutoRenew() {
-  const store = getStore();
-  updateStatuses(store);
-  const ar = store.autoRenew;
-  const tl = totalLicenses(store);
-  updateBadge(tl);
+// ============================================================
+function renderAutoRenew(){
+  const s=getStore(); updateStatuses(s);
+  const ar=s.autoRenew, tl=totalLicenses(s); updateBadge(tl);
+  document.getElementById('ar-enabled').checked=ar.enabled;
+  document.getElementById('ar-days-before').value=ar.daysBefore;
+  document.getElementById('ar-time').value=ar.time;
+  document.getElementById('ar-notify').checked=ar.notify;
+  document.getElementById('ar-email').value=ar.email||'';
+  document.getElementById('ar-retry').value=ar.retry;
+  document.getElementById('ar-acme').checked=ar.acme;
 
-  document.getElementById('ar-enabled').checked = ar.enabled;
-  document.getElementById('ar-days-before').value = ar.daysBefore;
-  document.getElementById('ar-time').value = ar.time;
-  document.getElementById('ar-notify').checked = ar.notify;
-  document.getElementById('ar-email').value = ar.email || '';
-  document.getElementById('ar-retry').value = ar.retry;
-  document.getElementById('ar-acme').checked = ar.acme;
+  const c=s.certificates;
+  // Show license warning: check if any selected cert needs renewal but not enough licenses
+  // We show the warning globally if total licenses < number of expiring/expired certs
+  const needCount = c.filter(x=>x.status==='expiring'||x.status==='expired').length;
+  document.getElementById('autorenew-license-warning').style.display=(needCount>0&&tl<needCount)?'flex':'none';
 
-  const certs = store.certificates;
-  const renewTargets = certs.filter(c => c.status === 'expiring' || c.status === 'expired');
-  const needLic = renewTargets.length;
-  const showWarn = needLic > 0 && tl < needLic;
-  document.getElementById('autorenew-license-warning').style.display = showWarn ? 'flex' : 'none';
-
-  document.getElementById('ar-no-certs').style.display = certs.length === 0 ? 'flex' : 'none';
-  document.getElementById('ar-cert-table').innerHTML = certs.map((c, i) => {
-    const rem = daysBetween(today(), c.expires);
-    const isTarget = c.status === 'expiring' || c.status === 'expired';
-    const nextRenew = rem <= 0 ? '即時更新対象' : rem <= ar.daysBefore ? '即時更新対象' : `期限${ar.daysBefore}日前`;
-    return `<tr>
-      <td><input type="checkbox" class="ar-cert-check" data-index="${i}" ${isTarget ? 'checked' : ''}></td>
-      <td><strong>${c.cn}</strong></td>
-      <td><span class="badge badge-blue">${c.type}</span></td>
-      <td>${c.expires}</td>
-      <td>${rem > 0 ? rem + '日' : '<span style="color:var(--danger);font-weight:700;">期限切れ</span>'}</td>
-      <td>${nextRenew}</td>
-      <td>${statusBadge(c)}</td>
-    </tr>`;
+  document.getElementById('ar-no-certs').style.display=c.length===0?'flex':'none';
+  document.getElementById('ar-cert-table').innerHTML=c.map((x,i)=>{
+    const rem=daysBetween(today(),x.expires);
+    const next=rem<=ar.daysBefore?'即時更新対象':`期限${ar.daysBefore}日前`;
+    return `<tr><td><input type="checkbox" class="ar-cert-check" data-index="${i}" checked></td><td><strong>${x.cn}</strong></td><td><span class="badge badge-blue">${x.type}</span></td><td>${x.expires}</td><td>${rem>0?rem+'日':'<span style="color:var(--danger);font-weight:700;">期限切れ</span>'}</td><td>${next}</td><td>${statusBadge(x)}</td></tr>`;
   }).join('');
 
-  // Logs
-  const logs = store.autoRenewLogs || [];
-  document.getElementById('ar-log-table').innerHTML = logs.length === 0
-    ? '<tr><td colspan="5" style="text-align:center;color:var(--text-light);padding:28px;">ログはまだありません</td></tr>'
-    : logs.map(l => `<tr>
-        <td>${l.date}</td><td><strong>${l.cn}</strong></td><td><span class="badge badge-blue">${l.type}</span></td>
-        <td>${l.success ? '<span class="badge badge-green">成功</span>' : '<span class="badge badge-red">失敗</span>'}</td>
-        <td style="font-size:12px;color:var(--text-light);">${l.detail}</td>
-      </tr>`).join('');
+  const logs=s.autoRenewLogs||[];
+  document.getElementById('ar-log-table').innerHTML=logs.length===0
+    ?'<tr><td colspan="5" style="text-align:center;color:var(--text-light);padding:28px;">ログはまだありません</td></tr>'
+    :logs.map(l=>`<tr><td>${l.date}</td><td><strong>${l.cn}</strong></td><td><span class="badge badge-blue">${l.type}</span></td><td>${l.success?'<span class="badge badge-green">成功</span>':'<span class="badge badge-red">失敗</span>'}</td><td>${l.detail}</td></tr>`).join('');
 }
-
-function toggleAllArCerts(el) {
-  document.querySelectorAll('.ar-cert-check').forEach(cb => cb.checked = el.checked);
+function saveAutoRenewSettings(){
+  const s=getStore();
+  s.autoRenew={enabled:document.getElementById('ar-enabled').checked,daysBefore:parseInt(document.getElementById('ar-days-before').value),time:document.getElementById('ar-time').value,notify:document.getElementById('ar-notify').checked,email:document.getElementById('ar-email').value,retry:parseInt(document.getElementById('ar-retry').value),acme:document.getElementById('ar-acme').checked};
+  addAudit(s,'setting','自動更新設定','設定を変更');
+  saveStore(s);
 }
+function toggleAllArCerts(el){document.querySelectorAll('.ar-cert-check').forEach(c=>c.checked=el.checked);}
 
-function saveAutoRenewSettings() {
-  const store = getStore();
-  store.autoRenew = {
-    enabled: document.getElementById('ar-enabled').checked,
-    daysBefore: parseInt(document.getElementById('ar-days-before').value),
-    time: document.getElementById('ar-time').value,
-    notify: document.getElementById('ar-notify').checked,
-    email: document.getElementById('ar-email').value,
-    retry: parseInt(document.getElementById('ar-retry').value),
-    acme: document.getElementById('ar-acme').checked,
-  };
-  saveStore(store);
-}
-
-function executeAutoRenew() {
-  const store = getStore();
-  const checked = document.querySelectorAll('.ar-cert-check:checked');
-  const indices = Array.from(checked).map(cb => parseInt(cb.dataset.index));
-  const targets = indices.map(i => store.certificates[i]).filter(c => c.status === 'expiring' || c.status === 'expired');
-
-  if (targets.length === 0) {
-    alert('更新対象の証明書がありません。期限切れまたは更新予定の証明書をチェックしてください。');
+function executeAutoRenew(){
+  const s=getStore();
+  const checked=document.querySelectorAll('.ar-cert-check:checked');
+  if(checked.length===0){alert('更新対象の証明書を選択してください。');return;}
+  const indices=[...checked].map(c=>parseInt(c.dataset.index));
+  // Check licenses
+  const typeCounts={};
+  indices.forEach(i=>{const t=s.certificates[i].type;typeCounts[t]=(typeCounts[t]||0)+1;});
+  let shortage=false, shortageTypes=[];
+  for(const[t,need] of Object.entries(typeCounts)){if((s.licenses[t]||0)<need){shortage=true;shortageTypes.push(`${t}（必要:${need}, 残:${s.licenses[t]||0}）`);}}
+  if(shortage){
+    document.getElementById('autorenew-license-warning').style.display='flex';
+    document.getElementById('autorenew-license-warning').querySelector('div').innerHTML=`
+      <strong style="font-size:15px;">ライセンスが不足しています！</strong><br>
+      ${shortageTypes.join(', ')}<br>追加のライセンスを購入してください。
+      <br><button class="btn btn-danger btn-sm" style="margin-top:10px;" onclick="navigate('license')">🛒 ライセンス購入ページへ</button>`;
     return;
   }
-
-  // Check license availability per type
-  const needed = {};
-  targets.forEach(c => { needed[c.type] = (needed[c.type] || 0) + 1; });
-  let insufficient = false;
-  const shortages = [];
-  Object.entries(needed).forEach(([type, count]) => {
-    if ((store.licenses[type] || 0) < count) {
-      insufficient = true;
-      shortages.push(`${type}: 必要${count} / 保有${store.licenses[type] || 0}`);
-    }
-  });
-
-  if (insufficient) {
-    alert('ライセンスが不足しています。\n\n' + shortages.join('\n') + '\n\nライセンスを追加購入してください。');
-    return;
-  }
-
-  const steps = targets.map((c, i) => ({
-    text: `[${i + 1}/${targets.length}] ${c.cn} を更新中...`,
-    duration: 1000
-  }));
-
-  showLoadingMultiStep(steps, () => {
-    // Consume licenses and renew
-    const nowDate = new Date();
-    const logs = store.autoRenewLogs || [];
-    targets.forEach(c => {
-      store.licenses[c.type]--;
-      c.issued = fmt(nowDate);
-      const exp = new Date(nowDate); exp.setFullYear(exp.getFullYear() + 1);
-      c.expires = fmt(exp);
-      c.status = 'active';
-      logs.unshift({
-        date: nowDate.toISOString().replace('T', ' ').slice(0, 19),
-        cn: c.cn, type: c.type, success: true,
-        detail: `自動更新により証明書を再発行（新有効期限: ${fmt(exp)}）`
-      });
+  // Execute
+  const renewList=indices.map(i=>({index:i,cert:s.certificates[i]}));
+  showLoadingMultiStep([
+    {text:`${renewList.length}件の証明書を更新しています...`,duration:1500},
+    {text:'CSR再生成・検証中...',duration:1000},
+    {text:'新しい証明書を発行しています...',duration:1200},
+  ],()=>{
+    const s2=getStore();
+    renewList.forEach(({index,cert})=>{
+      s2.licenses[cert.type]--;
+      const now=new Date(),exp=new Date(now); exp.setDate(exp.getDate()+CERT_VALIDITY_DAYS);
+      s2.certificates[index].issued=fmt(now);
+      s2.certificates[index].expires=fmt(exp);
+      s2.certificates[index].status='active';
+      s2.autoRenewLogs.unshift({date:fmtTime(now),cn:cert.cn,type:cert.type,success:true,detail:`自動更新成功 → 有効期限: ${fmt(exp)}`});
+      addAudit(s2,'autorenew',cert.cn,`${cert.type}証明書を自動更新 新有効期限:${fmt(exp)}`);
     });
-    store.autoRenewLogs = logs;
-    saveStore(store);
-    showSuccess(`${targets.length} 件の証明書を更新しました！`, () => renderAutoRenew());
+    saveStore(s2);
+    showSuccess(`${renewList.length}件の証明書を更新しました！`,()=>renderAutoRenew());
   });
 }
 
-// ==========================================================
+// ============================================================
+//  USERS
+// ============================================================
+function renderUsers(){
+  const s=getStore();
+  document.getElementById('users-table').innerHTML=s.users.map((u,i)=>`
+    <tr>
+      <td><strong>${u.name}</strong></td><td>${u.email}</td>
+      <td><span class="badge ${u.role==='管理者'?'badge-purple':u.role==='オペレーター'?'badge-blue':'badge-gray'}">${u.role}</span></td>
+      <td><span class="badge badge-green">${u.status==='active'?'有効':'無効'}</span></td>
+      <td>${u.lastLogin}</td>
+      <td><button class="btn btn-outline btn-sm" onclick="alert('デモ版では編集できません')">編集</button></td>
+    </tr>`).join('');
+}
+function addDemoUser(){
+  const s=getStore();
+  const n=s.users.length+1;
+  s.users.push({name:`User ${n}`,email:`user${n}@example.com`,role:'閲覧者',status:'active',lastLogin:fmtTime(new Date())});
+  addAudit(s,'setting','ユーザー管理',`User ${n} を追加`);
+  saveStore(s);
+  showSuccess('ユーザーを追加しました！',()=>renderUsers());
+}
+
+// ============================================================
+//  AUDIT LOG
+// ============================================================
+function renderAuditLog(){
+  const s=getStore(), filter=document.getElementById('audit-filter')?.value||'all';
+  let logs=s.auditLogs||[];
+  if(filter!=='all') logs=logs.filter(l=>l.action===filter);
+  const actionLabels={issue:'証明書発行',renew:'証明書更新',purchase:'ライセンス購入',autorenew:'自動更新',setting:'設定変更'};
+  const actionBadges={issue:'badge-blue',renew:'badge-yellow',purchase:'badge-green',autorenew:'badge-purple',setting:'badge-gray'};
+  document.getElementById('audit-log-table').innerHTML=logs.length===0
+    ?'<tr><td colspan="6" style="text-align:center;color:var(--text-light);padding:28px;">ログがありません</td></tr>'
+    :logs.map(l=>`<tr><td style="font-size:12px;">${l.date}</td><td>${l.user}</td><td><span class="badge ${actionBadges[l.action]||'badge-gray'}">${actionLabels[l.action]||l.action}</span></td><td><strong>${l.target}</strong></td><td style="font-size:12px;">${l.detail}</td><td style="font-family:monospace;font-size:11px;">${l.ip}</td></tr>`).join('');
+}
+function exportAuditLog(){
+  const s=getStore(), logs=s.auditLogs||[];
+  let csv='日時,ユーザー,操作,対象,詳細,IP\n';
+  logs.forEach(l=>{csv+=`"${l.date}","${l.user}","${l.action}","${l.target}","${l.detail}","${l.ip}"\n`;});
+  const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='caucasus_audit_log.csv';a.click();
+}
+
+// ============================================================
+//  API
+// ============================================================
+let apiKeyVisible=false;
+function renderApi(){
+  const s=getStore();
+  document.getElementById('api-key-display').value=apiKeyVisible?s.apiKey:'ccs_live_••••••••••••••••••••';
+}
+function toggleApiKey(){
+  apiKeyVisible=!apiKeyVisible;
+  renderApi();
+}
+function regenerateApiKey(){
+  if(!confirm('APIキーを再生成しますか？既存のキーは無効になります。'))return;
+  const s=getStore(); s.apiKey=generateApiKey(); addAudit(s,'setting','APIキー','APIキーを再生成'); saveStore(s);
+  apiKeyVisible=true;
+  showSuccess('APIキーを再生成しました！',()=>renderApi());
+}
+
+// ============================================================
 //  UI HELPERS
-// ==========================================================
-function updateBadge(total) {
-  const badge = document.getElementById('license-counter-badge');
-  badge.textContent = `ライセンス: ${total}`;
-  badge.className = 'topbar-badge' + (total <= 0 ? ' danger' : total <= 3 ? ' warning' : '');
+// ============================================================
+function updateBadge(tl){
+  const b=document.getElementById('license-counter-badge');
+  b.textContent='ライセンス: '+tl;
+  b.className='topbar-badge'+(tl<=0?' danger':tl<=3?' warning':'');
 }
-
-function showLoading(text, duration, callback) {
-  const modal = document.getElementById('loading-modal');
-  const box = document.getElementById('loading-box');
-  box.innerHTML = `<div class="spinner"></div><p>${text}</p>`;
-  modal.style.display = 'flex';
-  setTimeout(() => { modal.style.display = 'none'; if (callback) callback(); }, duration);
+function showLoading(text,dur,cb){
+  const m=document.getElementById('loading-modal'),b=document.getElementById('loading-box');
+  b.innerHTML=`<div class="spinner"></div><p>${text}</p>`;m.style.display='flex';
+  setTimeout(()=>{m.style.display='none';if(cb)cb();},dur);
 }
-
-function showLoadingMultiStep(steps, callback) {
-  const modal = document.getElementById('loading-modal');
-  const box = document.getElementById('loading-box');
-  modal.style.display = 'flex';
-  let i = 0;
-  function next() {
-    if (i >= steps.length) { modal.style.display = 'none'; if (callback) callback(); return; }
-    box.innerHTML = `<div class="spinner"></div><p>${steps[i].text}</p>`;
-    setTimeout(() => { i++; next(); }, steps[i].duration);
+function showSuccess(text,cb){
+  const m=document.getElementById('loading-modal'),b=document.getElementById('loading-box');
+  b.innerHTML=`<div class="success-icon">✓</div><p style="font-weight:700;color:#065F46;font-size:15px;">${text}</p>`;m.style.display='flex';
+  setTimeout(()=>{m.style.display='none';if(cb)cb();},1600);
+}
+function showLoadingMultiStep(steps,cb){
+  const m=document.getElementById('loading-modal'),b=document.getElementById('loading-box');
+  m.style.display='flex'; let i=0;
+  function next(){
+    if(i>=steps.length){m.style.display='none';if(cb)cb();return;}
+    b.innerHTML=`<div class="spinner"></div><p>${steps[i].text}</p><div style="margin-top:12px;height:4px;background:#E2E8F0;border-radius:2px;overflow:hidden;"><div style="height:100%;background:var(--primary);width:${Math.round(((i+1)/steps.length)*100)}%;transition:width .3s;border-radius:2px;"></div></div>`;
+    setTimeout(()=>{i++;next();},steps[i].duration);
   }
   next();
 }
 
-function showSuccess(text, callback) {
-  const modal = document.getElementById('loading-modal');
-  const box = document.getElementById('loading-box');
-  box.innerHTML = `<div class="success-icon">✓</div><p style="font-weight:700;color:#065F46;font-size:15px;">${text}</p>`;
-  modal.style.display = 'flex';
-  setTimeout(() => { modal.style.display = 'none'; if (callback) callback(); }, 1800);
-}
-
-// ==========================================================
+// ============================================================
 //  INIT
-// ==========================================================
-window.addEventListener('DOMContentLoaded', () => {
-  const licCountSel = document.getElementById('lic-count');
-  for (let i = 1; i <= 100; i++) {
-    const o = document.createElement('option'); o.value = i; o.textContent = i;
-    licCountSel.appendChild(o);
-  }
+// ============================================================
+window.addEventListener('DOMContentLoaded',()=>{
+  const lc=document.getElementById('lic-count');
+  for(let i=1;i<=100;i++){const o=document.createElement('option');o.value=i;o.textContent=i;lc.appendChild(o);}
+  const sc=document.getElementById('san-count');
+  for(let i=1;i<=99;i++){const o=document.createElement('option');o.value=i;o.textContent=i+'ドメイン';sc.appendChild(o);}
   initDemo();
   renderDashboard();
 });
